@@ -77,16 +77,35 @@ export const Orders = React.memo(() => {
   }
 
   return (
-    <div className="d-flex py-5">
+    <div className="d-flex py-5 orders">
       {!orders.length && <h2 className="px-5">There are no orders yet</h2>}
 
-      <ListGroup as="ul" className="px-5">
+      <ListGroup as="ul" className="px-5 orders__order order">
         {orders.map(order => (
-          <Link to={`../orders/${order.id}`} className="text-decoration-none">
-            <ListGroup.Item
-              key={order.id}
-              as="li"
-              className="d-flex justify-content-between align-items-center gap-3 order"
+          <ListGroup.Item
+            key={order.id}
+            as="li"
+            className="
+              d-flex 
+              justify-content-between 
+              align-items-center 
+              gap-3 
+              mb-2 
+              border 
+              rounded
+              order__group 
+            "
+          >
+            <Link 
+              to={`../orders/${order.id}`} 
+              className="
+                d-flex 
+                justify-content-between 
+                align-items-center 
+                gap-3
+                text-decoration-none
+                order__link
+              "
             >
               <div className="fw-bold">{order.title}</div>
 
@@ -106,10 +125,13 @@ export const Orders = React.memo(() => {
                   {`${activeProductsPrice(order.id, Currency.UAH)} ${Currency.UAH}`}
                 </div>
               </div>
+            </Link>
 
-              <CloseButton onClick={() => handleDeleteButton(order)} />
-            </ListGroup.Item>
-          </Link>
+            <CloseButton 
+              onClick={() => handleDeleteButton(order)} 
+              className="order__close-button opacity-100"
+            />
+          </ListGroup.Item>
         ))}
       </ListGroup>
 
@@ -133,7 +155,16 @@ export const Orders = React.memo(() => {
           <ProductsList />
 
           <Link to={"/orders"}>
-            <CloseButton />
+            <CloseButton 
+              className="
+                close-button 
+                rounded-circle 
+                bg-white 
+                opacity-100 
+                p-2
+                border
+              " 
+            />
           </Link>
         </>
       )}
