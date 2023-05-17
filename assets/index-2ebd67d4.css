@@ -1,4 +1,4 @@
-@charset "UTF-8";.main{display:grid;grid-template-columns:max-content 1fr}#root{max-width:1280px}.order:hover{background-color:#f8f9fa}/*!
+@charset "UTF-8";.main{display:grid;grid-template-columns:max-content 1fr}#root{max-width:1280px}.order__group:hover{background-color:#f8f9fa}.order__link,.order__link:hover{color:#000}.order__close-button{transition:transform .3s}.order__close-button:hover{transform:scale(1.1)}.close-button{position:relative;transform:translate(-50%,-50%);transition:transform .3s}.close-button:hover{transform:translate(-50%,-50%) scale(1.1)}/*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
  * Copyright 2011-2022 Twitter, Inc.
